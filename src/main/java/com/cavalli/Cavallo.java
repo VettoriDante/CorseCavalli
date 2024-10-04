@@ -18,10 +18,12 @@ public class Cavallo extends Thread{
 
     @Override
     public void run() {
-        try {
-            Thread.sleep((int) (Math.random() * 100));
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        for(int i = 0; i < durataCorsa; i++){
+            try {
+                Thread.sleep((int) (Math.random() * 10));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
         corsa.addArrivato(this.getNome());
     }
